@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Raleway&display=swap');
+/* font-family: 'Hedvig Letters Serif', serif; */
+/* font-family: 'Raleway', sans-serif; */
+
+@font-face {
+    font-family: 'impulsn';
+    src: url(fonts/impulsn.TTF) format('truetype');    
+    font-weight: bold;
+    font-style: normal;
+}
+
+:root {
+    --primary-color: white;
+    --secondary-color: rgb(160, 160, 160);
+}
+
+.d-none {
+    display: none;
+}
+
+p {
+    margin: 0;
+    font-family: 'Hedvig Letters Serif', serif;
+}
+
+body {
+    background-color: black;
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+nav {
+    background-color: rgb(19, 19, 19);
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    padding: 20px;
+}
+
+li {
+    font-family: 'Hedvig Letters Serif', serif;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    opacity: .75;
+    transition: .3s;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    margin: auto;
+    gap: 50px;
+    font-size: 2rem;
+}
+
+input[name=input-nav] {
+    height: 40px;
+    width: 300px;
+}
+
+input[name=input-nav]::placeholder {
+    font-family: 'Hedvig Letters Serif', serif;
+    font-size: 1.2rem;
+}
+
+.logo {
+    width: 230px;
+}
+
+li:hover {
+    opacity: 1;
+}
+
+header {
+    padding-right: 200px;
+}
+
+.img-fondo {
+    height: 85vh;
+    margin-top: 120px;
+}
+
+section {
+    display: flex;
+}
+
+.presentation h1 {
+    font-family: 'Hedvig Letters Serif', serif;
+    font-size: 5.5rem;
+    color: var(--primary-color);
+    margin-inline: auto;
+    margin-top: 200px;
+    margin-bottom: 0;
+}
+
+.presentation h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: lighter;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+.presentation p {
+    font-size: 1.7rem;
+}
+
+.referencia {
+    margin-left: 1rem;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+.btn-presentation {
+    background-color: rgb(44, 44, 44);
+    color: var(--primary-color);
+    margin-top: 40px;
+    font-size: 1.3rem;
+    font-family: 'Raleway', sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    transition: .3s;
+}
+
+.btn-presentation:hover {
+    border: 1px solid rgba(255, 255, 255, 1);
+}
