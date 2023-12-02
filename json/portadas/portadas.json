@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "nombre": "Horacio Quiroga",
+        "tags": "CUENTISTA | DRAMATURGO | POETA",
+        "descripcion": "Nacido en la ciudad de Salto el 31 de diciembre de 1878, Quiroga es uno de los más reconocidos cuentistas latinoamericanos. El escritor desarrolló gran parte de su obra viviendo en Argentina, donde su estancia en la selva misionera y sus duras experiencias de vida lo llevarían a narrar los rasgos más temibles de la misma.",
+        "referencia": "",
+        "imagen": "fondos/imagen_quiroga.png"
+    },
+    {
+        "id": 2,
+        "nombre": "Mario Benedetti",
+        "tags": "PERIODISTA | POETA | NOVELISTA | DRAMATURGO",
+        "descripcion": "La vida Mario Benedetti estuvo marcada por la literatura y por el compromiso con sus prójimos. Nacido en Paso de los Toros (Tacuarembó) el 14 de setiembre de 1920, fue una figura clave de la Generación del 45, también conocida como “la generación crítica”.",
+        "referencia": "Fundación Mario Benedetti",
+        "imagen": "fondos/imagen_benedetti.png"
+    }
+]

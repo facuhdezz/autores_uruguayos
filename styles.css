@@ -14,8 +14,16 @@
     --secondary-color: rgb(160, 160, 160);
 }
 
+/* -------------- ESTILOS GENERALES -------------- */
+
 .d-none {
     display: none;
+    opacity: 0;
+}
+
+.fade {
+    opacity: 1;
+    transition: opacity .3s;
 }
 
 p {
@@ -53,6 +61,8 @@ a {
     color: var(--primary-color);
 }
 
+/* -------------- NAVEGACION -------------- */
+
 nav ul{
     display: flex;
     justify-content: center;
@@ -81,6 +91,8 @@ li:hover {
     opacity: 1;
 }
 
+/* -------------- PRESENTACION -------------- */
+
 header {
     padding-right: 200px;
 }
@@ -97,6 +109,7 @@ section {
 .presentation h1 {
     font-family: 'Hedvig Letters Serif', serif;
     font-size: 5.5rem;
+    line-height: 4rem;
     color: var(--primary-color);
     margin-inline: auto;
     margin-top: 200px;
@@ -106,7 +119,7 @@ section {
 .presentation h3 {
     font-family: 'Raleway', sans-serif;
     font-weight: lighter;
-    margin-top: 0;
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 
@@ -135,4 +148,26 @@ section {
 
 .btn-presentation:hover {
     border: 1px solid rgba(255, 255, 255, 1);
+}
+
+/* -------------- MEDIAS QUERY -------------- */
+
+@media (max-width: 1700px) {
+    .presentation h1 {
+        font-size: 4.5rem;
+    }
+
+    .presentation p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 1550px) {
+    header {
+        padding-right: 140px;
+    }
+
+    .presentation h1 {
+        font-size: 4rem;
+    }
 }

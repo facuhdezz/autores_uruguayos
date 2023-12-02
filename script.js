@@ -1,12 +1,53 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('header');
-    const sections = container.querySelectorAll('section');
 
-    function changeArticle() {
-        sections.forEach(element => {
-            element.classList.toggle('d-none');
-        });        
+const container = document.querySelector('header');
+
+let currentSectionIndex = 0;
+
+async function fetchPortadas() {
+    try {
+        let response = await fetch('./json/portadas/portadas.json');
+        let data = await response.json();
+        return data;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+async function setArticles() {
+    let data = await fetchPortadas();
+    let htmlContentToAppend = '';
+    data.forEach(element => {
+        htmlContentToAppend += `
+        <section id="article-${element.id}" class="section-p">
+            <img class="img-fondo" src="${element.imagen}">
+            <div class="presentation">
+                <h1>${element.nombre}</h1>
+                <h3>${element.tags}</h3>
+                <p>${element.descripcion}<span class="referencia">${element.referencia}</span></p>
+                <button type="button" class="btn-presentation">Saber Más</button>
+            </div>
+        </section>
+        `;
+    });
+    container.innerHTML = htmlContentToAppend;
+
+    showNextSection();
+}
+
+function showNextSection() {
+    const sections = document.getElementsByClassName('section-p');
+
+    for (let i = 0; i < sections.length; i++) {
+        sections[i].classList.add('d-none');
     }
 
-    setInterval(changeArticle, 15000)
-});
+    sections[currentSectionIndex].classList.remove('d-none');
+
+    currentSectionIndex = (currentSectionIndex + 1) % sections.length;
+}
+
+setArticles();
+
+const intervalId = setInterval(showNextSection, 20000);
+
+
