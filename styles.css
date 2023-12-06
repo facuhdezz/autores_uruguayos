@@ -16,17 +16,15 @@
 
 /* -------------- ESTILOS GENERALES -------------- */
 
+* {
+    scroll-behavior: smooth;
+}
+
 .d-none {
     display: none;
-    opacity: 0;
 }
 
-.fade {
-    opacity: 1;
-    transition: opacity .3s;
-}
-
-p {
+p,h1,h2,h3,h4 {
     margin: 0;
     font-family: 'Hedvig Letters Serif', serif;
 }
@@ -37,6 +35,10 @@ body {
     background-attachment: fixed;
     color: var(--primary-color);
     margin: 0;
+}
+
+.fade {
+    opacity: 0.2;
 }
 
 nav {
@@ -73,6 +75,10 @@ nav ul{
     font-size: 2rem;
 }
 
+#menu {
+    display: none;
+}
+
 input[name=input-nav] {
     height: 40px;
     width: 300px;
@@ -97,19 +103,71 @@ header {
     padding-right: 200px;
 }
 
+.dialog {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    position: fixed;
+    z-index: 100;
+    margin-block: 30vh;
+    margin-inline: 30vw;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.dialgo > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dialog h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.dialog p {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+}
+
+.dialog p span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.btn-dialog {
+    background-color: rgb(44, 44, 44);
+    color: var(--primary-color);
+    margin-top: 40px;
+    font-size: 1.3rem;
+    font-family: 'Raleway', sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    transition: .3s;
+}
+
+.btn-dialog:hover {
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+
 .img-fondo {
     height: 85vh;
     margin-top: 120px;
 }
 
-section {
+header section {
     display: flex;
 }
 
 .presentation h1 {
     font-family: 'Hedvig Letters Serif', serif;
     font-size: 5.5rem;
-    line-height: 4rem;
+    line-height: 5.5rem;
     color: var(--primary-color);
     margin-inline: auto;
     margin-top: 200px;
@@ -119,12 +177,14 @@ section {
 .presentation h3 {
     font-family: 'Raleway', sans-serif;
     font-weight: lighter;
+    color: var(--secondary-color);
     margin-top: 20px;
     margin-bottom: 50px;
 }
 
 .presentation p {
     font-size: 1.7rem;
+    text-indent: 2rem;
 }
 
 .referencia {
@@ -147,14 +207,107 @@ section {
 }
 
 .btn-presentation:hover {
+    cursor: pointer;
     border: 1px solid rgba(255, 255, 255, 1);
+}
+
+/* -------------- OBRAS -------------- */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    margin: 100px;
+    max-width: 1700px;
+}
+
+.container article {
+    max-width: 240px;
+    margin-inline: auto;
+}
+
+.container h1 {
+    font-size: 2rem;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.todas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    margin-top: 30px;
+}
+
+.container-grid {
+    position: relative;
+}
+
+.container-grid > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .9);
+    font-family: 'Hedvig Letters Serif', serif;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-grid:hover div {
+    text-align: center;
+    opacity: 1;
+    transition: opacity .35s;
+}
+
+.title-target {
+    font-size: 1.5rem;
+}
+
+.subtitle-target {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    margin-bottom: 40px;
+}
+
+.info-target {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    width: 170px;
+    height: 35px;
+    margin-block: 10px;
+    transition: .3s;
+}
+
+.btn:hover {
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.btn-pdf {
+    background-color: var(--primary-color);
+}
+
+.btn-info {
+    background-color: var(--secondary-color);
 }
 
 /* -------------- MEDIAS QUERY -------------- */
 
-@media (max-width: 1700px) {
+@media (max-width: 1750px) {
     .presentation h1 {
         font-size: 4.5rem;
+        line-height: 4rem;
     }
 
     .presentation p {
@@ -163,11 +316,121 @@ section {
 }
 
 @media (max-width: 1550px) {
+
+    nav {
+        padding: 10px;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .img-fondo {
+        margin-top: 90px;
+    }
+
     header {
-        padding-right: 140px;
+        padding-right: 100px;
     }
 
     .presentation h1 {
         font-size: 4rem;
+        margin-top: 170px;
     }
 }
+
+@media (max-width: 1480px) {
+    header {
+        padding-right: 100px;
+    }
+
+    .presentation h1 {
+        margin-top: 120px;
+        font-size: 3.7rem;
+        line-height: 3.5rem;
+    }
+
+    .presentation h3 {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .presentation p {
+        font-size: 1.1rem;
+    }
+
+    .btn-presentation {
+        margin-top: 20px;
+    }
+    
+    .img-fondo {
+        height: 75vh;
+        margin-top: 90px;
+    }
+}
+
+@media (max-width: 1130px) {
+    .presentation h1 {
+        font-size: 4rem;
+        line-height: 3.7rem;
+    }
+}
+
+@media (orientation: portrait) {
+    nav ul {
+        display: none;
+    }
+
+    #menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row-reverse;
+        gap: 20px;
+    }
+
+    #menu .menu-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    header section {
+        flex-direction: column;
+    }
+
+    .img-fondo {
+        width: 100vw;
+        height: auto;
+    }
+
+    header {
+        padding-right: 0;
+    }
+
+    .presentation {
+        padding-inline: 20px;
+        height: 350px;
+    }
+
+    .presentation h1 {
+        margin-top: 10px;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .presentation h3 {
+        text-align: center;
+    }
+
+    .container {
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .presentation {
+        height: 550px;
+    }
+  }
