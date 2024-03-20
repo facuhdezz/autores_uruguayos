@@ -30,13 +30,6 @@ const { title, description } = Astro.props;
 	/* font-family: 'Hedvig Letters Serif', serif; */
 	/* font-family: 'Raleway', sans-serif; */
 
-	/* @font-face {
-		font-family: 'impulsn';
-		src: url(fonts/impulsn.TTF) format('truetype');    
-		font-weight: bold;
-		font-style: normal;
-	} */
-
 	* {
 		box-sizing: border-box;
 	}
@@ -63,25 +56,54 @@ const { title, description } = Astro.props;
 
 	a {
 		text-decoration: none;
+		color: white;
+	}
+
+	.presentation h1 {
+		font-family: 'Hedvig Letters Serif', serif;
+		font-size: 5.5rem;
+		line-height: 5.5rem;
+		color: white;
+		margin-inline: auto;
+		margin-top: 70px;
+		margin-bottom: 0;
+	}
+
+	.presentation h3 {
+		font-family: 'Raleway', sans-serif;
+		font-weight: lighter;
+		color: rgb(160, 160, 160);
+		margin-top: 20px;
+		margin-bottom: 50px;
+	}
+
+	.presentation p {
+		font-size: 1.7rem;
+		text-indent: 2rem;
+	}
+
+	.referencia {
+		margin-left: 1rem;
+		color: rgb(160, 160, 160);
+		font-style: italic;
+	}	
+
+	.btn-presentation {
+		background-color: rgb(44, 44, 44);
 		color: var(--primary-color);
+		margin-top: 40px;
+		font-size: 1.3rem;
+		font-family: 'Raleway', sans-serif;
+		border: 1px solid rgba(255, 255, 255, 0);
+		border-radius: 5px;
+		width: 200px;
+		height: 50px;
+		transition: .3s;
 	}
 
-	.carousel {
-		position: relative;
-		width: 100%; /* Ancho del carrusel */
-	}
-
-	.carousel-items {
-		width: 100%;
-		display: flex;
-		overflow: hidden;
-		transition: transform 0.5s ease; /* Transición suave */
-	}
-
-	.carousel-item {
-		flex: 0 0 auto;
-		width: 100%; /* Ancho de cada slide */
-		padding: 10px;
+	.btn-presentation:hover {
+		cursor: pointer;
+		border: 1px solid rgba(255, 255, 255, 1);
 	}
 
 	.prev-btn,
