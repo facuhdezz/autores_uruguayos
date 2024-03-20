@@ -1,5 +1,4 @@
 const Portada = ({autor}) => {
-    console.log(autor);
     return (
     <article className="carousel-item flex shrink-0 w-screen">
         <img className="img-fondo h-[85vh]" src={autor.imagen} alt={`Foto de ${autor.nombre}`} />

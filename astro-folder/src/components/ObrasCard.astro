@@ -1,0 +1,55 @@
+---
+const {obra} = Astro.props;
+const route = `../../src/assets/${obra.imagen}`
+
+---
+<article class="relative overflow-hidden">
+    <img class="w-full" src={route}>
+    <div>  
+        <div>
+            <h1>{obra.nombre}</h1>
+            <h2>{obra.autor}</h2>
+            <p>{obra.categoría} | {obra.año}</p>
+        </div>
+        <div class="flex flex-col">
+            <button>Boton 1</button>
+            <button>Boton 2</button>
+        </div>        
+    </div>
+</article>
+
+<style>
+    article > div {
+        background-color: black;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        opacity: 0;
+        transition: .5s;
+    }
+
+    article:hover > div {
+        transform: translateY(-100%);
+        opacity: 95%;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 2.3rem;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        color: rgb(160, 160, 160);
+    }
+</style>
