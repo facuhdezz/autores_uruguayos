@@ -1,0 +1,106 @@
+---
+import NavMenu from '../components/NavMenu.astro';
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header>
+			<NavMenu />
+		</header>
+		<main>
+			<slot />
+		</main>
+		<footer></footer>	
+	</body>
+</html>
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Raleway&display=swap');
+	/* font-family: 'Hedvig Letters Serif', serif; */
+	/* font-family: 'Raleway', sans-serif; */
+
+	/* @font-face {
+		font-family: 'impulsn';
+		src: url(fonts/impulsn.TTF) format('truetype');    
+		font-weight: bold;
+		font-style: normal;
+	} */
+
+	* {
+		box-sizing: border-box;
+	}
+
+	html {
+		font-family: 'Hedvig Letters Serif', 'Raleway', system-ui, sans-serif;
+		background: black;
+		scroll-behavior: smooth;
+		color: white;
+	}
+
+	body {
+        margin: 0 auto;
+	}
+
+	header {
+		position: absolute;
+		top: 0;
+	}
+
+	main {
+		margin-top: 95px;
+	}
+
+	a {
+		text-decoration: none;
+		color: var(--primary-color);
+	}
+
+	.carousel {
+		position: relative;
+		width: 100%; /* Ancho del carrusel */
+	}
+
+	.carousel-items {
+		width: 100%;
+		display: flex;
+		overflow: hidden;
+		transition: transform 0.5s ease; /* Transición suave */
+	}
+
+	.carousel-item {
+		flex: 0 0 auto;
+		width: 100%; /* Ancho de cada slide */
+		padding: 10px;
+	}
+
+	.prev-btn,
+	.next-btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background-color: rgba(0, 0, 0, 0.5);
+		color: white;
+		border: none;
+		padding: 10px;
+		cursor: pointer;
+	}
+
+	.prev-btn {
+		left: 0;
+	}
+
+	.next-btn {
+		right: 0;
+	}
+</style>
