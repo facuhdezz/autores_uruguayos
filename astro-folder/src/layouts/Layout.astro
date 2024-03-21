@@ -90,14 +90,14 @@ const { title, description } = Astro.props;
 
 	.btn-presentation {
 		background-color: rgb(44, 44, 44);
-		color: var(--primary-color);
-		margin-top: 40px;
-		font-size: 1.3rem;
+		color: white;
+		/* margin-top: 40px;
+		font-size: 1.3rem; */
 		font-family: 'Raleway', sans-serif;
 		border: 1px solid rgba(255, 255, 255, 0);
 		border-radius: 5px;
-		width: 200px;
-		height: 50px;
+		/* width: 200px;
+		height: 50px; */
 		transition: .3s;
 	}
 
@@ -124,5 +124,22 @@ const { title, description } = Astro.props;
 
 	.next-btn {
 		right: 0;
+	}
+
+	@media(max-width: 1600px) {
+		.presentation h1 {
+			margin-top: 30px;
+			font-size: 4rem;
+			line-height: 3.9rem;
+		}
+
+		.presentation h3 {
+			margin-top: 10px;
+			font-size: 1rem;
+		}
+
+		.presentation p {
+			font-size: 1.4rem;
+		}
 	}
 </style>

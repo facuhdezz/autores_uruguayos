@@ -1,0 +1,72 @@
+---
+import Portada from "./Portada";
+import Autores from "../assets/json/portadas/portadas.json";
+---
+<section class="carousel relative bg-black w-screen overflow-hidden">
+    <input type="radio" id="radio1" name="slides" checked>
+    <input type="radio" id="radio2" name="slides">
+    <input type="radio" id="radio3" name="slides">
+    <div class="carousel-items flex w-screen transition duration-700">
+        {Autores.map((autor) => <Portada autor={autor} />)}
+    </div>
+
+    <div class="carousel-indicators">
+        <label class="indicator" for="radio1"></label>
+        <label class="indicator" for="radio2"></label>
+        <label class="indicator" for="radio3"></label>
+    </div>
+</section>
+
+<style>
+    input {
+        display: none;
+    }
+
+    .carousel-items {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    section :global(.carousel-item) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        animation: slide 70s infinite;
+    }
+
+    #radio1:checked ~ .carousel-items { transform: translateX(0%); }
+    #radio2:checked ~ .carousel-items { transform: translateX(-100%); }
+    #radio3:checked ~ .carousel-items { transform: translateX(-200%); }
+
+    .carousel-indicators {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateY(80vh);
+    }
+
+    .indicator {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background-color: #ccc;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+
+    .indicator:hover {
+        background-color: #888;
+    }
+
+    @keyframes slide {
+        0%, 30% {
+            transform: translateX(0%)
+        }
+        33%, 63% {
+            transform: translateX(-100%);
+        }
+        66%, 97% {
+            transform: translateX(-200%);
+        }
+    }
+</style>
