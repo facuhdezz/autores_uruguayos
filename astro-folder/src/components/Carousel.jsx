@@ -1,8 +1,10 @@
 import Portada from "./Portada";
 import Autores from "../assets/json/portadas/portadas.json";
 import { useEffect, useState } from "react";
+import Arrow from "../assets/iconos/arrow.svg";
 
 const Carousel = () => {
+    console.log(Arrow);
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -29,7 +31,7 @@ const Carousel = () => {
                 </div>
             </section>
             <button className="prev-btn" onClick={prevSlide}>Prev</button>
-            <button className="next-btn" onClick={nextSlide}>Next</button>
+            <button className="next-btn" onClick={nextSlide}><img className="w-4 text-white" src={Arrow.src} /></button>
         </>
     )
 }
