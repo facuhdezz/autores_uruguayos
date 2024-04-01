@@ -47,7 +47,7 @@ function showNextSection() {
 
 setArticles();
 
-const intervalId = setInterval(showNextSection, 4000); //20000
+const intervalId = setInterval(showNextSection, 20000); //20000
 
 
 
