@@ -1,7 +1,7 @@
 import Portada from "./Portada";
 import Autores from "../assets/json/portadas/portadas.json";
 import { useEffect, useState } from "react";
-import Arrow from "../assets/iconos/arrow.svg";
+import Arrow from "../assets/iconos/arrowW.svg";
 
 const Carousel = () => {
     console.log(Arrow);
@@ -30,8 +30,8 @@ const Carousel = () => {
                     {Autores.map((autor) => <Portada autor={autor} />)}
                 </div>
             </section>
-            <button className="prev-btn" onClick={prevSlide}>Prev</button>
-            <button className="next-btn" onClick={nextSlide}><img className="w-4 text-white" src={Arrow.src} /></button>
+            <button className="prev-btn" onClick={prevSlide}><img className="w-10 hover:w-12 duration-100 rotate-180" src={Arrow.src} /></button>
+            <button className="next-btn" onClick={nextSlide}><img className="w-10 hover:w-12 duration-100" src={Arrow.src} /></button>
         </>
     )
 }
