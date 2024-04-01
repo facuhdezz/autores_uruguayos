@@ -1,8 +1,5 @@
 editables
 
-# build output
-dist/
-
 # generated types
 .astro/
 
