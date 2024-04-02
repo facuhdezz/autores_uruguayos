@@ -1,7 +1,7 @@
 import Button from './Button';
 
 const Portada = ({autor}) => {
-    const route = `../src/assets/fondos/${autor.link}`
+    const route = `./assets/fondos/${autor.link}`
     return (
     <article className="carousel-item flex shrink-0 w-[100dvw]">
         <img className="img-fondo h-[85vh] aspect-[716/600]" src={route} alt={`Foto de ${autor.nombre}`} />
