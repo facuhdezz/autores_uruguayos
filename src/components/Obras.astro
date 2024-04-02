@@ -1,0 +1,29 @@
+---
+import ObrasCard from './ObrasCard.astro';
+import obras from '../assets/json/obras.json';
+---
+
+<section class="obras-all text-center">
+    <h1>Todas las obras</h1>
+    <div>
+        {obras.map((obra) => <ObrasCard obra={obra} />)}
+    </div>
+</section>
+
+<style>
+    section {
+        margin-block: 100px;
+        margin-inline: 200px;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 40px;
+    }
+
+    div {
+        display: grid;
+        gap: 40px;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+</style>

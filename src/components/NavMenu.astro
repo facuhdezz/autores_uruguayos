@@ -1,0 +1,81 @@
+---
+import Logo from '../assets/iconos/au_logo_blanco_completo.png';
+import Menu from '../assets/iconos/menu.png';
+---
+
+<nav>
+    <ul>
+        <li><a href="#"><img class="logo" src={Logo.src} alt="logo de Autores Uruguayos"></a></li>
+        <li><a href="#">Categorías</a></li>
+        <li><a href="#">Autores</a></li>
+        <li><input name="input-nav" type="search" placeholder="Buscar"></li>
+    </ul>
+    <div id="menu">
+        <a><img class="menu-icon" src={Menu.src} alt="botón de menú"></a>
+        <a href="#"><img class="logo" src={Logo.src} alt="logo de Autores Uruguayos"></a>            
+    </div>   
+</nav>
+
+<style>
+    nav {
+        background-color: #13151a;
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        padding: 20px;
+    }
+
+    li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        opacity: .75;
+        transition: .3s;
+    }
+
+    li:hover {
+        opacity: 1;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 900px;
+        margin: auto;
+        gap: 50px;
+        font-size: 2rem;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    input {
+        background-color: #0e0e0e;
+        color: rgb(216, 216, 216);
+        height: 40px;
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #333333;
+        border-radius: 7px;
+        font-size: 1rem;
+        font-family: 'Raleway';
+    }
+
+    input::placeholder {
+        color: white;
+        font-family: 'Hedvig Letters Serif';
+        font-size: 1.2rem;
+    }
+
+    input:focus {
+        outline: none;
+        outline-width: 0;
+        border: 1px solid rgb(212, 212, 212);
+    }
+
+    .logo {
+        width: 230px;
+    }
+</style>

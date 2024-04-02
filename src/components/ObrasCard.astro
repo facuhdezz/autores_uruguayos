@@ -1,0 +1,54 @@
+---
+import Button from './Button';
+const {obra} = Astro.props;
+const route = `../../src/assets/${obra.imagen}`
+---
+<article class="relative overflow-hidden">
+    <img class="w-full" src={route}>
+    <div>  
+        <div>
+            <h1>{obra.nombre}</h1>
+            <h2>{obra.autor}</h2>
+            <p>{obra.categoría} | {obra.año}</p>
+        </div>
+        <div class="flex flex-col gap-4">
+            <Button client:visible btnText="Ver PDF" className={"text-[1rem] w-[200px] h-[40px]"} url={obra.pdf}/>
+            <Button client:visible btnText="Más info" className={"text-[1rem] w-[200px] h-[40px]"} url={null}/>
+        </div>        
+    </div>
+</article>
+
+<style>
+    article > div {
+        background: rgba(0, 0, 0, 0);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        transition: .5s;
+    }
+
+    article:hover > div {
+        transform: translateY(-100%);
+        background: rgba(0, 0, 0, 0.95);
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 2.3rem;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        color: rgb(160, 160, 160);
+    }
+</style>
